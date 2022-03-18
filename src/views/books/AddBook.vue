@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{name: 'Books'}" class="btn btn-light mb-3">Back</router-link>
+  <router-link :to="{name: 'Books'}" class="btn btn-light mb-3">Back</router-link>
   <form class="row g-3" @submit.prevent="handleSubmit">
     <div class="col-md-6">
       <label for="isbn" class="form-label">ISBN</label>
