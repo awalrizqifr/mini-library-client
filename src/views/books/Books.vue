@@ -1,7 +1,7 @@
 <template>
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between mb-3">
     <h4>Manage Books</h4>
-    <router-link to="/" class="btn btn-light">Add New Book</router-link>
+    <router-link :to="{name: 'AddBook'}" class="btn btn-light">Add New Book</router-link>
   </div>
   <div v-if="isPending">Loading...</div>
   <template v-else>
