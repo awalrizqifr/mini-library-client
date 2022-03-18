@@ -37,11 +37,16 @@ export default function useBooks() {
     }
   }
 
+  const deleteBook = async (id) => {
+    await axios.delete(`/api/books/${id}`)
+  }
+
   return {
     errors,
     isPending,
     books,
     getBooks,
-    addBook
+    addBook,
+    deleteBook
   }
 }
