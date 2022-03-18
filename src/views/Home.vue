@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
+    <h4>Home</h4>
     <p>Welcome to mini library web app</p>
   </div>
 </template>
