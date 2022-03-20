@@ -4,6 +4,7 @@ import Books from '../views/books/Books.vue'
 import AddBook from '../views/books/AddBook.vue'
 import EditBook from '../views/books/EditBook.vue'
 import Students from '../views/students/Students.vue'
+import AddStudent from '../views/students/AddStudent.vue'
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/students',
     name: 'Students',
     component: Students
+  },
+  {
+    path: '/students/add',
+    name: 'AddStudent',
+    component: AddStudent
   },
 ]
 

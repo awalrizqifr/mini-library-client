@@ -1,6 +1,7 @@
 <template>
   <div class="d-flex justify-content-between mb-3">
     <h4>Manage Students</h4>
+    <router-link :to="{name: 'AddStudent'}" class="btn btn-light">Add New Student</router-link>
   </div>
   <div v-if="isPending">Loading...</div>
   <template v-else>
