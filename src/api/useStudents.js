@@ -5,7 +5,9 @@ import { useRouter } from 'vue-router'
 export default function useStudents() {
   const router = useRouter()
   const students = ref([])
+  const student = ref([])
   let isPending = ref(false)
+  let isUpdating = ref(false)
   const errors = ref(null)
 
   const getStudents = async () => {
@@ -13,6 +15,18 @@ export default function useStudents() {
     try {
       let response = await axios.get('/api/students')
       students.value = response.data.data
+      isPending.value = false
+    } catch (err) {
+      console.log(err.message)
+      isPending.value = false
+    }
+  }
+
+  const getStudent = async (id) => {
+    isPending.value = true
+    try {
+      let response = await axios.get(`/api/students/${id}`)
+      student.value = response.data.data
       isPending.value = false
     } catch (err) {
       console.log(err.message)
@@ -37,6 +51,23 @@ export default function useStudents() {
     }
   }
 
+  const updateStudent = async (id) => {
+    isUpdating.value = true
+    errors.value = null
+    try {
+      await axios.patch(`/api/students/${id}`, student.value)
+      isUpdating.value = false
+      await router.push({name: 'Students'})
+    } catch (err) {
+      if (err.response.status === 422) {
+        errors.value = err.response.data.errors
+        isUpdating.value = false
+      }
+      console.log(err.message)
+      isUpdating.value = false
+    }
+  }
+
   const deleteStudent = async (id) => {
     await axios.delete(`/api/students/${id}`)
   }
@@ -44,9 +75,13 @@ export default function useStudents() {
   return {
     errors,
     isPending,
+    isUpdating,
     students,
+    student,
     getStudents,
+    getStudent,
     addStudent,
+    updateStudent,
     deleteStudent
   }
 }

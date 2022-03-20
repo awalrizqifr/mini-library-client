@@ -15,7 +15,7 @@
           {{ message }}
       </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
       <label for="phone_number" class="form-label">Phone Number</label>
       <input type="text" class="form-control" id="phone_number" v-model="form.phone_number" :class="[{ 'is-invalid': errors?.phone_number }]">
       <div v-for="message in errors?.phone_number" class="invalid-feedback">

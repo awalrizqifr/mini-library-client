@@ -5,6 +5,7 @@ import AddBook from '../views/books/AddBook.vue'
 import EditBook from '../views/books/EditBook.vue'
 import Students from '../views/students/Students.vue'
 import AddStudent from '../views/students/AddStudent.vue'
+import EditStudent from '../views/students/EditStudent.vue'
 
 const routes = [
   {
@@ -38,6 +39,12 @@ const routes = [
     name: 'AddStudent',
     component: AddStudent
   },
+  {
+    path: '/students/:id',
+    name: 'EditStudent',
+    component: EditStudent,
+    props: true
+  }
 ]
 
 const router = createRouter({
