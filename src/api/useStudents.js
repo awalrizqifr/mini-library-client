@@ -17,9 +17,14 @@ export default function useStudents() {
     }
   }
 
+  const deleteStudent = async (id) => {
+    await axios.delete(`/api/students/${id}`)
+  }
+
   return {
     isPending,
     students,
-    getStudents
+    getStudents,
+    deleteStudent
   }
 }
