@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Books from '../views/books/Books.vue'
 import AddBook from '../views/books/AddBook.vue'
 import EditBook from '../views/books/EditBook.vue'
+import Students from '../views/students/Students.vue'
 
 const routes = [
   {
@@ -25,7 +26,12 @@ const routes = [
     name: 'EditBook',
     component: EditBook,
     props: true
-  }
+  },
+  {
+    path: '/students',
+    name: 'Students',
+    component: Students
+  },
 ]
 
 const router = createRouter({

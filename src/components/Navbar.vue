@@ -14,7 +14,7 @@
             <router-link :to="{ name: 'Books' }" class="nav-link" active-class="active">Manage Books</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Manage Students</a>
+            <router-link :to="{ name: 'Students' }" class="nav-link" active-class="active">Manage Students</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Manage Transactions</a>
