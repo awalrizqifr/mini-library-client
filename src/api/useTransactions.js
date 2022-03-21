@@ -29,6 +29,9 @@ export default function useTransactions() {
       transaction.value = response.data.data
       isPending.value = false
     } catch (err) {
+      if (err.response.status === 404) {
+        await router.push({name: 'Transactions'})
+      } 
       console.log(err.message)
       isPending.value = false
     }

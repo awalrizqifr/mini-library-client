@@ -29,6 +29,9 @@ export default function useBooks() {
       book.value = response.data.data
       isPending.value = false
     } catch (err) {
+      if (err.response.status === 404) {
+        await router.push({name: 'Books'})
+      } 
       console.log(err.message)
       isPending.value = false
     }
