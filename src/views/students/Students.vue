@@ -57,7 +57,7 @@ export default {
     onMounted(getStudents)
 
     const handleSubmit = async (id) => {
-      if (! window.confirm('Are you sure?')) {
+      if (! window.confirm('Are you sure want to permanently delete this student? Deleting this student will also delete the transaction that belongs to this student')) {
         return
       }
 

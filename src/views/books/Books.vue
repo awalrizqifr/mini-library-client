@@ -59,7 +59,7 @@ export default {
     onMounted(getBooks)
 
     const handleSubmit = async (id) => {
-      if (! window.confirm('Are you sure?')) {
+      if (! window.confirm('Are you sure want to permanently delete this book? Deleting this book will also delete the transaction that belongs to this book!')) {
         return
       }
 
