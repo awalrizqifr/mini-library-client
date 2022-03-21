@@ -6,6 +6,9 @@ import EditBook from '../views/books/EditBook.vue'
 import Students from '../views/students/Students.vue'
 import AddStudent from '../views/students/AddStudent.vue'
 import EditStudent from '../views/students/EditStudent.vue'
+import Transactions from '../views/transactions/Transactions.vue'
+import AddTransaction from '../views/transactions/AddTransaction.vue'
+import EditTransaction from '../views/transactions/EditTransaction.vue'
 
 const routes = [
   {
@@ -43,6 +46,22 @@ const routes = [
     path: '/students/:id',
     name: 'EditStudent',
     component: EditStudent,
+    props: true
+  },
+  {
+    path: '/transactions',
+    name: 'Transactions',
+    component: Transactions
+  },
+  {
+    path: '/transactions/add',
+    name: 'AddTransaction',
+    component: AddTransaction
+  },
+  {
+    path: '/transactions/:id',
+    name: 'EditTransaction',
+    component: EditTransaction,
     props: true
   }
 ]
